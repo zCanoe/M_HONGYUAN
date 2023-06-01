@@ -1,0 +1,99 @@
+@import "variable";
+.product {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .item {
+    background-color: #ffffff;
+    width: 46.667vw;
+    overflow: hidden;
+    border-radius: 0.8vw  /* 3/3.75 */;
+    margin-top: 2.67vw  /* 10/3.75 */;
+
+    &:nth-child(2n) {
+      margin-left: 2.67vw  /* 10/3.75 */;
+    }
+
+    .album {
+      width: inherit;
+      img {
+        width: inherit;
+      }
+    }
+
+    .info {
+      .company {
+        background: url("img/company_01.png") no-repeat left center/4vw 4vw;
+        text-indent: 4.8vw  /* 18/3.75 */;
+        color: #777;
+        font-size: @smallFontSize;
+      }
+
+      .brand {
+        display: flex;
+        justify-content: flex-start;
+
+        .sell_way {
+          padding: 0.53vw  /* 2/3.75 */;
+          font-size: @smallFontSize;
+          background-color: @mainColor;
+          color: white;
+          border-radius: 1.33vw  /* 5/3.75 */;
+        }
+
+        span {
+          margin-left: 2.67vw  /* 10/3.75 */;
+        }
+      }
+
+      .desc {
+        width: inherit;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .tags {
+        margin: 1.33vw  /* 5/3.75 */ 0;
+        width: inherit;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        .tag {
+          border: 0.53vw  /* 2/3.75 */ solid @mainColor;
+          color: @mainColor;
+          font-size: @smallFontSize;
+          font-weight: 700;
+          padding: 0 1.33vw  /* 5/3.75 */;
+          border-radius: 0.53vw  /* 2/3.75 */;
+          margin-left: 2.67vw  /* 10/3.75 */;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &.ticket::before {
+            content: "券";
+            background-color: #ffe6e7;
+          }
+        }
+      }
+
+      .discount_price {
+        display: flex;
+        color: @mainColor;
+        align-items: flex-end;
+        .discount {
+          font-size: @smallFontSize;
+        }
+
+        .price {
+          font-size: @bigFontSize;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
